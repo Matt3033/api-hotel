@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import ClienteRepositories from '../repositories/clientes.repositories';
+import IncluirClienteService from '../services/incluir.cliente.service';
 
 export default class ClienteControllers {
     
@@ -13,8 +14,8 @@ export default class ClienteControllers {
                 return res.status(422).send({ body: 'Preencha todos os campos corretamente' });
             }
             
-            const clienteRepo: ClienteRepositories = new ClienteRepositories();
-            clienteRepo.incluirClienteRepository(data);
+            const incluirClienteService: IncluirClienteService = new IncluirClienteService();
+            await incluirClienteService.execute(data);
             
             return res.status(200).send({ body: 'Usuário cadastrado com sucesso' });
         } catch (err: any) {
