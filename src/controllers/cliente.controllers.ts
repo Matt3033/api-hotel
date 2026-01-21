@@ -12,7 +12,7 @@ export default class ClienteControllers {
             if (!nome || !senha || !email) {
                 return res.status(422).send({ body: 'Preencha todos os campos corretamente' });
             }
-
+            
             const clienteRepo: ClienteRepositories = new ClienteRepositories();
             clienteRepo.incluirClienteRepository(data);
             

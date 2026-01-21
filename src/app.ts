@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cliente from './routes/cliente.route';
 import DBConexao from './config/db';
+import expressValidator from 'express-validator';
 
 dotenv.config();
 

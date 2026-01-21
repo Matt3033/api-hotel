@@ -12,7 +12,7 @@ export default class DBConexao {
             if (this.URI) {
                 await mongoose.connect(this.URI);
             }
-            console.log('Conexão estabelecida');
+            console.log('Conexão com db estabelecida');
         } catch (err: any) {
             throw new Error(err.message);
         }
