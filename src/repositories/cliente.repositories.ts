@@ -12,13 +12,13 @@ export default class ClienteRepositories {
         }
     }
 
-    public async buscarClientePorCampoRepository(data: any): Promise<false | ICliente[]> {
+    public async buscarClientePorCampoRepository(data: any): Promise<false | ICliente> {
         try {
-            const clientes: ICliente[] = await Cliente.find(data, '_id nome email senha fotoPerfil');
-            if (clientes.length === 0) {
+            const cliente: ICliente | null = await Cliente.findOne(data, '_id email');
+            if (!cliente) {
                 return false;
             }
-            return clientes;
+            return cliente;
             
         } catch (err: any) {
             throw new Error(err.message);
