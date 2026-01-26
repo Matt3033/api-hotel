@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cliente from './routes/cliente.route';
+import login from './routes/auth.route';
 import DBConexao from './config/db';
 
 dotenv.config();
@@ -10,6 +11,7 @@ const PORTA = process.env.PORTA || 8000;
 
 app.use(express.json());
 app.use('/api/clientes', cliente);
+app.use('/api/auth', login);
 
 app.listen(PORTA, async () => {
     

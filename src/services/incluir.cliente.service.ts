@@ -1,5 +1,5 @@
 import ICliente from '../types/cliente';
-import ClienteRepositories from '../repositories/clientes.repositories';
+import ClienteRepositories from '../repositories/cliente.repositories';
 import bcrypt from 'bcrypt';
 
 export default class IncluirClienteService {

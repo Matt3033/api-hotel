@@ -14,7 +14,7 @@ export default class ClienteRepositories {
 
     public async buscarClientePorCampoRepository(data: any): Promise<false | ICliente> {
         try {
-            const cliente: ICliente | null = await Cliente.findOne(data, '_id email');
+            const cliente: ICliente | null = await Cliente.findOne(data, '_id email senha');
             if (!cliente) {
                 return false;
             }
