@@ -37,7 +37,7 @@ export default class LoginService {
                 tipoUsuario: tipoUsuario
             },
             secret,
-            { expiresIn: 10 }
+            { expiresIn: 300 }
         )
 
         return token;
