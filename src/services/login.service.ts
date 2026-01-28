@@ -33,6 +33,7 @@ export default class LoginService {
         const secret = String(process.env.SECRET_JWT);
         const token = jwt.sign(
             {
+                id: usuarioExiste._id,
                 email: data.email,
                 tipoUsuario: tipoUsuario
             },
