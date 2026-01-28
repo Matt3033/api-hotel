@@ -4,7 +4,12 @@ import Hotel from '../models/hotel';
 export default class HotelRepositories {
     
     public async incluirHotelRepository(data: Omit<IHotel, '_id'>): Promise<void> {
-
+        try {
+            const hotel = new Hotel(data);
+            await hotel.save();
+        } catch (err: any) {
+            throw new Error(err.message);
+        }
     }
 
     public async buscarHotelPorCampoRepository(data: any): Promise<false | IHotel> {
