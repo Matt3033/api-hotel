@@ -7,6 +7,6 @@ const schema = new Schema({
     fotoPerfil: { type: String }
 })
 
-const Cliente = model('Usuarios', schema);
+const Cliente = model('Clientes', schema);
 
 export default Cliente;

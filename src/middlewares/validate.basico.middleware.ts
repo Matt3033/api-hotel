@@ -1,6 +1,6 @@
 import { body } from 'express-validator';
 
-export default class ValidateClienteMiddleware {
+export default class ValidateBasicoMiddleware {
     public execute() {
         return [
             body('email')
