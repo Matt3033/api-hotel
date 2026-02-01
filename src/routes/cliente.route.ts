@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import ClienteControllers from '../controllers/cliente.controllers';
-import ValidateBasicoMiddleware from '../middlewares/validate.basico.middleware';
+import ValidateBasicoMiddleware from '../middlewares/validate-basico.middleware';
 import ValidateMiddleware from '../middlewares/validate.middleware';
 
 const router = Router();

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import IncluirHotelService from '../services/incluir.hotel.service';
+import IncluirHotelService from '../services/incluir-hotel.service';
 
 export default class HotelControllers {
     public async incluirHotelController(req: Request, res: Response): Promise<Response> {

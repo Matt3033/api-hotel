@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import HotelControllers from '../controllers/hotel.controllers';
-import ValidateBasicoMiddleware from '../middlewares/validate.basico.middleware';
+import ValidateBasicoMiddleware from '../middlewares/validate-basico.middleware';
 import ValidateMiddleware from '../middlewares/validate.middleware';
 
 

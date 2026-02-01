@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import ClienteRepositories from '../repositories/cliente.repositories';
-import IncluirClienteService from '../services/incluir.cliente.service';
+import IncluirClienteService from '../services/incluir-cliente.service';
 
 export default class ClienteControllers {
     
