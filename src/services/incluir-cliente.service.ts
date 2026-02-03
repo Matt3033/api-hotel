@@ -1,14 +1,16 @@
 import ICliente from '../types/cliente';
 import ClienteRepositories from '../repositories/cliente.repositories';
 import bcrypt from 'bcrypt';
+import BuscarUsuariosEmailService from './buscar-usuarios-email.service';
 
 export default class IncluirClienteService {
 
     public async execute(data: Omit<ICliente, '_id'>): Promise<void> {
-        
+
         const clienteRepo: ClienteRepositories = new ClienteRepositories();
         
-        const usuarioExiste = await clienteRepo.buscarClientePorCampoRepository({ email: data.email });
+        const buscarUsuariosEmailService: BuscarUsuariosEmailService = new BuscarUsuariosEmailService();
+        const usuarioExiste = await buscarUsuariosEmailService.execute(data.email);
         if (usuarioExiste) {
             throw new Error('Esse e-mail já está vinculado a uma conta');
         }
