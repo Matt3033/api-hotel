@@ -7,5 +7,6 @@ export default interface IHotel {
     senha: string,
     endereco: string,
     avaliacaoMedia: number,
-    fotoPerfil: string
+    fotoPerfil: string,
+    refreshToken: { idRefreshToken: string, expiresIn: number }
 }

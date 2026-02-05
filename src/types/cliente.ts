@@ -5,5 +5,6 @@ export default interface ICliente {
     nome: string,
     email: string,
     senha: string,
-    fotoPerfil: string
+    fotoPerfil: string,
+    refreshToken: { idRefreshToken: string, expiresIn: number }
 }

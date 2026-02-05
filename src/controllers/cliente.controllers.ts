@@ -15,7 +15,7 @@ export default class ClienteControllers {
             }
             
             const incluirClienteService: IncluirClienteService = new IncluirClienteService();
-            await incluirClienteService.execute({ ...data, fotoPerfil: ''});
+            await incluirClienteService.execute({ ...data, fotoPerfil: '', refreshToken: { idRefreshToken: '', expiresIn: 0 } });
             
             return res.status(200).send({ body: 'Usuário cadastrado com sucesso' });
         } catch (err: any) {

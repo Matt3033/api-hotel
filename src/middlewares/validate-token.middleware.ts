@@ -15,13 +15,16 @@ export default class ValidateTokenMiddleware {
             return res.status(401).send({ body: 'Token ausente' });
         }
 
-        const secret = String(process.env.SECRET_JWT);
-        const decoded = jwt.verify(token, secret) as ITokenPayload;
-        if (!decoded) {
+        try {            
+            const secret = String(process.env.SECRET_JWT);
+            const decoded = jwt.verify(token, secret) as ITokenPayload;
+            
+            res.locals.tipoUsuario = decoded.tipoUsuario;
+            
+            next();
+        } catch {
             res.status(401).send({ body: 'Token inválido' });
         }
 
-        res.locals.tipoUsuario = decoded.tipoUsuario;
-        next();
     }
 }

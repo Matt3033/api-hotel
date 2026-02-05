@@ -1,5 +1,7 @@
 import ICliente from '../types/cliente';
 import Cliente from '../models/cliente';
+import { ObjectId } from 'mongoose';
+import { v4 as uuidv4 } from 'uuid';
 
 export default class ClienteRepositories {
 
@@ -23,6 +25,23 @@ export default class ClienteRepositories {
         } catch (err: any) {
             throw new Error(err.message);
         }
+    }
 
+    public async incluirRefreshTokenRepository(idUsuario: ObjectId) {
+        try {
+
+            const refreshToken = await Cliente.findOneAndUpdate(
+                { _id: idUsuario }, 
+                { 
+                    refreshToken: { idRefreshToken: uuidv4(), expiresIn: Date.now() + 30000 } 
+                },
+                { new: true }
+            );
+            
+            return refreshToken?.refreshToken?.idRefreshToken;
+        
+        } catch (err: any) {
+            throw new Error(err.message);
+        }
     }
 }

@@ -3,6 +3,7 @@ import LoginService from '../services/login.service';
 import ILogin from '../types/login';
 
 export default class AuthControllers {
+
     public async loginController(req: Request, res: Response): Promise<Response> {
         try {
             
@@ -14,11 +15,19 @@ export default class AuthControllers {
             }
 
             const loginService: LoginService = new LoginService();
-            const token = await loginService.execute(data);
+            const { tokenAcesso, refreshToken} = await loginService.execute(data);
 
-            return res.status(200).send({ body: 'Login realizado', token: token });
+            return res.status(200).send({ body: 'Login realizado', tokenAcesso, refreshToken });
         } catch (err: any) {
             return res.status(403).send({ body: err.message });
+        }
+    }
+
+    public async refreshTokenController(req: Request, res: Response): Promise<Response>{
+        try {
+            return res.status(200).send({ token: '', refreshToken: '' });
+        } catch (err: any) {
+            return res.status(422).send({ body: err.message });
         }
     }
 }

@@ -13,7 +13,7 @@ export default class HotelControllers {
                 return res.send({ body: 'Preencha todos os dados corretamente'});
             }
 
-            await incluirHotelService.execute({ ...data, avaliacaoMedia: 0, fotoPerfil: '' });
+            await incluirHotelService.execute({ ...data, avaliacaoMedia: 0, fotoPerfil: '', refreshToken: { idRefreshToken: '', expiresIn: 0 } });
 
             return res.status(200).send({ body: 'Usuário cadastrado' });
         } catch (err: any) {
