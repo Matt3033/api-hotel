@@ -1,6 +1,6 @@
 import { ObjectId } from 'mongoose';
 
-export default interface ICliente {
+interface ICliente {
     _id: ObjectId,
     nome: string,
     email: string,
@@ -8,3 +8,5 @@ export default interface ICliente {
     fotoPerfil: string,
     refreshToken: { idRefreshToken: string, expiresIn: number }
 }
+
+export default ICliente;

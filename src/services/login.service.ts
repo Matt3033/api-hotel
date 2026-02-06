@@ -15,7 +15,7 @@ interface ILoginServiceExecute {
     refreshToken: string
 }
 
-export default class LoginService {
+class LoginService {
     public async execute(data: ILogin): Promise<ILoginServiceExecute> {
 
         const clienteRepo: ClienteRepositories = new ClienteRepositories();
@@ -44,3 +44,5 @@ export default class LoginService {
         return { tokenAcesso, refreshToken };
     }
 }
+
+export default LoginService;

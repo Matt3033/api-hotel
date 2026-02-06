@@ -12,5 +12,4 @@ const router = Router();
 
 router.post('/', validateBasicoMiddleware.execute(), validateMiddleware.execute, clienteControllers.incluirHotelController);
 
-
 export default router;

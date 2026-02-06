@@ -3,7 +3,7 @@ import ClienteRepositories from '../repositories/cliente.repositories';
 import bcrypt from 'bcrypt';
 import BuscarUsuariosEmailService from './buscar-usuarios-email.service';
 
-export default class IncluirClienteService {
+class IncluirClienteService {
 
     public async execute(data: Omit<ICliente, '_id'>): Promise<void> {
 
@@ -22,3 +22,5 @@ export default class IncluirClienteService {
         await clienteRepo.incluirClienteRepository(data);
     }
 }
+
+export default IncluirClienteService;

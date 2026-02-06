@@ -2,7 +2,7 @@ import { ObjectId } from 'mongoose';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 
-export default function gerarTokenAcesso(idUsuario: ObjectId, email: string, tipoUsuario: string): string {
+function gerarTokenAcesso(idUsuario: ObjectId, email: string, tipoUsuario: string): string {
     dotenv.config();
 
     const secret = String(process.env.SECRET_JWT);
@@ -15,3 +15,5 @@ export default function gerarTokenAcesso(idUsuario: ObjectId, email: string, tip
     return token;
 
 }
+
+export default gerarTokenAcesso;

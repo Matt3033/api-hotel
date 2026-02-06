@@ -3,7 +3,7 @@ import Cliente from '../models/cliente';
 import { ObjectId } from 'mongoose';
 import { v4 as uuidv4 } from 'uuid';
 
-export default class ClienteRepositories {
+class ClienteRepositories {
 
     public async incluirClienteRepository(data: Omit<ICliente, '_id'>): Promise<void> {
         try {
@@ -45,3 +45,5 @@ export default class ClienteRepositories {
         }
     }
 }
+
+export default ClienteRepositories;

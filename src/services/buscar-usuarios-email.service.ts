@@ -10,7 +10,7 @@ interface IBuscarUsuariosEmailServiceExecute {
     tipoUsuario: string
 }
 
-export default class BuscarUsuariosEmailService {
+class BuscarUsuariosEmailService {
     public async execute(email: string): Promise<IBuscarUsuariosEmailServiceExecute | false> {
         const clienteRepo: ClienteRepositories = new ClienteRepositories();
         const usuarioClienteJaExiste = await clienteRepo.buscarClientePorCampoRepository({ email: email });
@@ -37,3 +37,5 @@ export default class BuscarUsuariosEmailService {
 
     }
 }
+
+export default BuscarUsuariosEmailService;

@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import ClienteRepositories from '../repositories/cliente.repositories';
 import IncluirClienteService from '../services/incluir-cliente.service';
 
-export default class ClienteControllers {
+class ClienteControllers {
     
     public async incluirClienteController(req: Request, res: Response): Promise<Response> {
         try {
@@ -23,3 +23,5 @@ export default class ClienteControllers {
         }
     }
 }
+
+export default ClienteControllers;

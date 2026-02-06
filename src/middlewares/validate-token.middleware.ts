@@ -5,7 +5,7 @@ import ITokenPayload from '../types/token-payload';
 
 dotev.config();
 
-export default class ValidateTokenMiddleware {
+class ValidateTokenMiddleware {
     
     public async execute(req: Request, res: Response, next: NextFunction) {
         
@@ -28,3 +28,5 @@ export default class ValidateTokenMiddleware {
 
     }
 }
+
+export default ValidateTokenMiddleware;

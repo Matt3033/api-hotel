@@ -3,7 +3,7 @@ import HotelRepositories from '../repositories/hotel.repositories';
 import bycript from 'bcrypt';
 import BuscarUsuariosEmailService from './buscar-usuarios-email.service';
 
-export default class IncluirHotelService {
+class IncluirHotelService {
 
     public async execute(data: Omit<IHotel, '_id'>): Promise<void> {
 
@@ -21,3 +21,5 @@ export default class IncluirHotelService {
         await repoHotel.incluirHotelRepository(data);
     }
 }
+
+export default IncluirHotelService;

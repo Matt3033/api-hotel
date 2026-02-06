@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import LoginService from '../services/login.service';
 import ILogin from '../types/login';
 
-export default class AuthControllers {
+class AuthControllers {
 
     public async loginController(req: Request, res: Response): Promise<Response> {
         try {
@@ -31,3 +31,5 @@ export default class AuthControllers {
         }
     }
 }
+
+export default AuthControllers;

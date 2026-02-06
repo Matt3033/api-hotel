@@ -3,7 +3,7 @@ import Hotel from '../models/hotel';
 import { v4 as uuidv4 } from 'uuid';
 import { ObjectId } from 'mongoose';
 
-export default class HotelRepositories {
+class HotelRepositories {
 
     public async incluirHotelRepository(data: Omit<IHotel, '_id'>): Promise<void> {
         try {
@@ -47,3 +47,4 @@ export default class HotelRepositories {
     }
 }
 
+export default HotelRepositories;

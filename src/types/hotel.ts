@@ -1,6 +1,6 @@
 import { ObjectId } from 'mongoose';
 
-export default interface IHotel {
+interface IHotel {
     _id: ObjectId,
     nome: string,
     email: string,
@@ -10,3 +10,5 @@ export default interface IHotel {
     fotoPerfil: string,
     refreshToken: { idRefreshToken: string, expiresIn: number }
 }
+
+export default IHotel;

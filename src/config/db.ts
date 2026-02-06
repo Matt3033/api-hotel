@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-export default class DBConexao {
+class DBConexao {
 
     private URI = String(process.env.DB_URI);
 
@@ -15,4 +15,6 @@ export default class DBConexao {
             throw new Error(err.message);
         }
     }
-} 
+}
+
+export default DBConexao

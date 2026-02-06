@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import { validationResult } from 'express-validator';
 
-export default class ValidateMiddleware {
+class ValidateMiddleware {
     public execute(req: Request, res: Response, next: NextFunction) {
         const erros = validationResult(req);
         if (!erros.isEmpty()) {
@@ -10,3 +10,5 @@ export default class ValidateMiddleware {
         next();
     }
 }
+
+export default ValidateMiddleware;
